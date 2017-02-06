@@ -2,11 +2,12 @@
   "name": "standup",
   "version": "0.1.0",
   "private": true,
-	"homepage" : "https://chjkw.github.io/standup",
+  "homepage": "https://chjkw.github.io/standup",
   "devDependencies": {
     "react-scripts": "0.8.5"
   },
   "dependencies": {
+    "gh-pages": "^0.12.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
@@ -15,6 +16,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-		"deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   }
 }
