@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './img/stand_up_logo.png';
 import './App.css';
+import Editor from './Editor'
 
 class App extends Component {
+  constructor(){
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  //버튼을 눌렀을 때 Action. 지금은 일단 콘솔 값을 확인만 함
+  handleSubmit(e){
+    console.log(this,e);
+  }
+  //익명 사용자 여부
+  isAnonymous(){
+    return true;
+  }
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Stand Up</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Editor {...this}/>
       </div>
     );
   }
