@@ -7,6 +7,4 @@ var config = {
  };
  //firebase.initializeApp(config);
 
-export var embedlyKey = process.env.REACT_APP_EMBEDLY_KEY;
-
 export default config;

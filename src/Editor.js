@@ -52,13 +52,19 @@ class Editor extends Component {
     let article = Object.assign({}, Article());
     article.user = "Genji";
     article.content = this.state.content;
-    article.urls[0].url = this.state.embedlyUrl;
-    this.props.submit(article);
+
+    if (this.state.embedlyUrl) {
+      article.urls[0].url = this.state.embedlyUrl;
+    } else {
+      article.urls[0].url = "";
+    }
+
+    this.props.handleSubmit(article);
   }
   detectURL(text){
     var urls = text.match(/(https?:\/\/[^\s]+)/g)||text.match(/(www.[^\s]+)/g);
     if(urls && urls.length>0) return urls[0];
-    else return undefined;
+    else return text;
   }
   render() {
     return (
